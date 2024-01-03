@@ -30,7 +30,6 @@
 
 (require 'compile)
 
-;;;###autoload
 (defun compile-eslint--find-filename ()
   "Find the filename for current error."
   (save-match-data
@@ -38,7 +37,6 @@
       (when (re-search-backward (rx bol (group "/" (+ any)) eol))
         (list (match-string 1))))))
 
-;;;###autoload
 (let ((form `(eslint
               ,(rx-to-string
                 '(and (group (group (+ digit)) ":" (group (+ digit)))
